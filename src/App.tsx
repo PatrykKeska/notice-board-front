@@ -2,7 +2,8 @@ import React from 'react';
 import {Header} from "./App/components/Head/Header";
 import {Title} from "./App/components/Head/Title";
 import {Button} from "./App/components/Head/Button";
-import {Magnifier} from "./App/components/Head/Magnifier";
+import {Input} from "./App/components/Head/input";
+import {Map} from "./App/components/Map/Map";
 
 
 export const App = () => {
@@ -12,8 +13,9 @@ export const App = () => {
             <Header>
                 <Title/>
                 <Button>Add Advertisement</Button>
-                <Magnifier/>
+                <Input/>
             </Header>
+            <Map/>
         </>
     );
 }
