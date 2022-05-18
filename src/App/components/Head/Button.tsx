@@ -11,6 +11,7 @@ font-size: .8em;
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
+  
 ;
 `
 
