@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import {MapContainer, Marker, Popup, TileLayer,} from 'react-leaflet'
 import '../../../utils/fix-marker';
+import {useContext, useEffect} from "react";
+import {SearchContext} from "../../../context/search/search.context";
 
 const Wrapper = styled.div`
   height: calc(100vh - 45px);
@@ -11,6 +13,11 @@ const Wrapper = styled.div`
 
 
 export const Map = () => {
+    const {search} = useContext(SearchContext);
+useEffect(()=>{
+        console.log(`make request to search ${search}`)
+    },
+    [search])
 
     return (
         <Wrapper>
@@ -21,7 +28,7 @@ export const Map = () => {
                 crossOrigin=""
             />
             <MapContainer style={{height: "100%", width: "100%"}} center={[49.683727, 20.3403628]} zoom={13}
-                          scrollWheelZoom={false}>
+                          scrollWheelZoom={true}>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
