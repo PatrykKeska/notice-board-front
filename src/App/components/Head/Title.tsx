@@ -3,13 +3,13 @@ import React from "react";
 
 
 
-interface Title {
+interface TitleType {
     color?: string,
     bold?: string,
     fontSize?: string,
 }
 
- const StyledTitle = styled.h1<Title>`
+ const StyledTitle = styled.h1<TitleType>`
   font-size: 1.2em;
   text-align: center;
   color: white;
@@ -18,7 +18,7 @@ interface Title {
 const UnderTitle = styled.h3`
 font-size: 1em;
   color: white;
-  margin:0 5px
+  margin:0 5px;
 `
 
 const Wrapper = styled.div`

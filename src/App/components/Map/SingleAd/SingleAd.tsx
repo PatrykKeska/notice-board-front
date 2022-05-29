@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {AdEntity} from "types";
+import {NewAdEntity} from "types";
 
 interface Props {
     id: string;
@@ -7,7 +7,7 @@ interface Props {
 
 
 export const SingleAd = (props: Props) => {
-    const [ad, setAd] = useState<AdEntity | null>(null)
+    const [ad, setAd] = useState<NewAdEntity | null>(null)
     useEffect(() => {
         (async () => {
             const res = await fetch(`http://localhost:3001/ad/${props.id}`);
@@ -24,7 +24,7 @@ export const SingleAd = (props: Props) => {
             <h2>{ad.name}</h2>
             <p>{ad.description}</p>
             {ad.price ? <p>Price: {ad.price}</p> : null}
-            <a target='_blank' href={ad.url}>Website</a>
+            <a target='_blank' rel="noreferrer" href={ad.url}>Website</a>
         </>
     )
 }
