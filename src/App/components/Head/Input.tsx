@@ -16,7 +16,7 @@ export const StyledInput = styled.input`
 
 `
 
-const Wrapper = styled.form`
+const Form = styled.form`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -37,9 +37,9 @@ export const Input = () => {
         setSearch(inputValue)
     }
     return (
-        <Wrapper onSubmit={setSearchFromLocalState}>
+        <Form onSubmit={setSearchFromLocalState}>
             <StyledInput value={inputValue} onChange={e => setInputValue(e.target.value)}/>
             <Magnifier/>
-        </Wrapper>
+        </Form>
     )
 }
