@@ -6,19 +6,3 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
-
-.styledLink{
-    font-size: .8em;
-    text-align: center;
-    background-color: green;
-    min-width: 200px;
-    width: 15%;
-    padding:5px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-}

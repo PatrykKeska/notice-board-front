@@ -3,7 +3,7 @@ import {Header} from "../Head/Header";
 import {Title} from "../Head/Title";
 import {Input} from "../Head/Input";
 import {Map} from "../Map/Map";
-import {Link} from "react-router-dom";
+import {StyledLink} from "../Link /StyledLink";
 
 export const HomePage = () => {
 
@@ -11,7 +11,7 @@ export const HomePage = () => {
         <>
             <Header layout="space-between">
                 <Title/>
-                <Link className='styledLink' to='/add'>new advertisement</Link>
+                <StyledLink className='styledLink' to='/add'>new advertisement</StyledLink>
                 <Input/>
             </Header>
             <Map/>

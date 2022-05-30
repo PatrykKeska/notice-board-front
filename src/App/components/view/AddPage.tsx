@@ -1,7 +1,7 @@
 import {Header} from "../Head/Header";
 import {AddForm} from "../AddForm/AddForm";
 import React from "react";
-import {Link} from "react-router-dom";
+import {StyledLink} from "../Link /StyledLink";
 
 
 
@@ -12,7 +12,7 @@ export const AddPage = () => {
 
         <>
             <Header layout="center">
-                <Link className='styledLink' to='/'>map view</Link>
+                <StyledLink className='styledLink' to='/'>map view</StyledLink>
             </Header>
             <AddForm/>
         </>
