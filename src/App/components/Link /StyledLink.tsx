@@ -3,11 +3,13 @@ import {Link} from "react-router-dom";
 import React from "react";
 
 export const StyledLink = styled(Link)`
-  font-size: .8em;
+  font-size: .5em;
   text-align: center;
   background-color: green;
-  min-width: 200px;
-  width: 15%;
+  min-width: 80px;
+  max-width: 250px;
+  max-height: 35px;
+  width: 20%;
   padding: 5px;
   border: none;
   border-radius: 5px;
@@ -15,4 +17,10 @@ export const StyledLink = styled(Link)`
   text-transform: uppercase;
   letter-spacing: 2px;
   text-decoration: none;
+  @media(min-width: 600px){
+    min-width: 100px;
+    max-width: 250px;
+    width: 25%;
+    font-size: .6em;
+  }
 `

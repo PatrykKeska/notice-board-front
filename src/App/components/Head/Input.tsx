@@ -5,14 +5,14 @@ import {SearchContext} from "../../../context/search/search.context";
 
 
 export const StyledInput = styled.input`
-  min-width: 100px;
+  min-width: 80px;
   width: 50%;
-  min-height: 90%;
+  min-height: 80%;
   border: none;
   padding:5px;
   border-radius: 20px;
   background-color: #ffffff;
-  margin-right: 5px;
+  margin-right: 3px;
 
 `
 

@@ -11,7 +11,7 @@ export const HomePage = () => {
         <>
             <Header layout="space-between">
                 <Title/>
-                <StyledLink className='styledLink' to='/add'>new advertisement</StyledLink>
+                <StyledLink className='styledLink' to='/add'>Add new</StyledLink>
                 <Input/>
             </Header>
             <Map/>
