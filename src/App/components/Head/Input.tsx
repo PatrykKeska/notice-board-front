@@ -1,21 +1,22 @@
-import React from 'react';
+import React, {FormEvent, useContext, useState} from 'react';
 import styled from 'styled-components';
 import {Magnifier} from "./Magnifier";
+import {SearchContext} from "../../../context/search/search.context";
 
 
 export const StyledInput = styled.input`
-  min-width: 100px;
+  min-width: 80px;
   width: 50%;
-  min-height: 90%;
-  height: 80%;
+  min-height: 80%;
   border: none;
+  padding:5px;
   border-radius: 20px;
   background-color: #ffffff;
-  margin-right: 5px;
+  margin-right: 3px;
 
 `
 
-const Wrapper = styled.div`
+const Form = styled.form`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -26,10 +27,19 @@ const Wrapper = styled.div`
 `
 
 
-export const Input = ()=>(
+export const Input = () => {
+    const {search, setSearch} = useContext(SearchContext);
+    const [inputValue, setInputValue] = useState(search);
 
-    <Wrapper>
-   <StyledInput/>
-        <Magnifier/>
-    </Wrapper>
-)
+    const setSearchFromLocalState = (e:FormEvent)=>{
+        e.preventDefault()
+
+        setSearch(inputValue)
+    }
+    return (
+        <Form onSubmit={setSearchFromLocalState}>
+            <StyledInput value={inputValue} onChange={e => setInputValue(e.target.value)}/>
+            <Magnifier/>
+        </Form>
+    )
+}

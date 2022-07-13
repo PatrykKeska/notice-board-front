@@ -1,22 +1,19 @@
-import React from 'react';
-import {Header} from "./App/components/Head/Header";
-import {Title} from "./App/components/Head/Title";
-import {Button} from "./App/components/Head/Button";
-import {Input} from "./App/components/Head/Input";
-import {Map} from "./App/components/Map/Map";
+import React, {useState} from 'react';
+import {SearchContext} from "./context/search/search.context";
+import {Route, Routes} from "react-router-dom";
+import {HomePage} from "./App/components/view/HomePage";
+import {AddPage} from "./App/components/view/AddPage";
 
 
 export const App = () => {
-
+    const [search, setSearch] = useState('');
     return (
-        <>
-            <Header>
-                <Title/>
-                <Button>Add Advertisement</Button>
-                <Input/>
-            </Header>
-            <Map/>
-        </>
+        <SearchContext.Provider value={{search: search, setSearch}}>
+            <Routes>
+                <Route path='/' element={<HomePage/>}/>
+                <Route path='/add' element={<AddPage/>}/>
+            </Routes>
+        </SearchContext.Provider>
     );
 }
 

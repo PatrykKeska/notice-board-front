@@ -1,14 +1,22 @@
 import styled from 'styled-components';
-export const Header = styled.div`
+
+interface Props {
+    layout: string
+}
+export const Header = styled.div<Props>`
   background-color: royalblue;
   width: 100vw;
-  height: 45px;
-  //max-height: 50px;
-  //min-height: 40px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  justify-content: space-around;
+  height: 45px;
+  
+  
+  @media(min-width:700px){
+    padding: 10px;
+    justify-content: ${props => props.layout}; 
+  }
+  
   
 `;
 
